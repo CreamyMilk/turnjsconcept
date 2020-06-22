@@ -1,0 +1,173 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html lang="en" class="ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+	<meta name="viewport" content="width = 1050, user-scalable = no" />
+	<script type="text/javascript" src="libs/jquery.min.1.7.js"></script>
+	<script type="text/javascript" src="libs/modernizr.2.5.3.min.js"></script>
+	<link rel="stylesheet" href="stylez.css">
+</head>
+
+<body>
+	<!--Generated Result-->
+
+
+	<div class="flipbook-viewport">
+
+
+		<div id="app">
+			<map name="googlemaps">
+				<area onclick="alert(1);" target="_blank" alt="baraboo barabing" title="SeeMapVideo"
+					coords="123,87,467,477" shape="rect">
+				<area target="" alt="" title="" href="" coords="" shape="0">
+			</map>
+			<map name="workmap">
+				<area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm">
+				<area shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm">
+				<area shape="circle" coords="337,300,44" alt="Cup of coffee" href="coffee.htm">
+			</map>
+			<map name="image-map">
+				<area target="_blank" alt="Glasic" title="Glasic" href="glasses" coords="361,343,158,240" shape="rect">
+			</map>
+
+
+			<!-- <button class="button" @click="showModal = true">
+				Display Popup
+			</button> -->
+
+			<!-- /*You can set this to be a custom component -->
+			<!-- /////////////////////////////////////////////// -->
+			<transition name="fade" appear>
+				<div class="modal-overlay" v-if="showMap" @click="showMap = false"></div>
+			</transition>
+			<transition name="slide" appear>
+				<div class="modal" v-if="showMap">
+					<h1>RandomMap</h1>
+						<div style="width: 100%"><iframe width="560" height="315" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;coord=-1.2903935,36.8165834&amp;q=1%20Grafton%20Street%2C%20Dublin%2C%20Ireland+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=16&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="http://www.gps.ie/">Find my location</a></iframe></div><br />
+					<button class="button" @click="showMap = false">
+						Close Map
+					</button>
+				</div>
+			</transition>
+			<!-- /////////////////////////////////////////////////////// -->
+			<transition name="fade" appear>
+				<div class="modal-overlay" v-if="showModal" @click="showModal = false"></div>
+			</transition>
+			<transition name="slide" appear>
+				<div class="modal" v-if="showModal">
+					<h1>Random Title</h1>
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/OgEd23s3T4w" frameborder="0"
+						allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen></iframe><br>
+					<button class="button" @click="showModal = false">
+						Close iframe
+					</button>
+				</div>
+			</transition>
+			<!-- ///////////////////////////////////////////////////// -->
+			<div class="container">
+				<div class="flipbook">
+					<div><img src='pages/1.jpg' usemap="#image-map" /></div>
+					<div>
+						<h2>Sample ipsum</h2>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque enim placeat reprehenderit
+							corporis. Numquam, ipsam ex debitis cumque dolorem non voluptates voluptatem ab, ducimus
+							dicta fuga? Harum assumenda accusantium dignissimos sed? Ducimus illo reprehenderit
+							laudantium qui recusandae amet soluta sint quas, quos suscipit neque aliquid id delectus.
+							Eligendi minus facere atque nulla excepturi. Est magni voluptatum beatae perferendis, quae
+							repudiandae nulla ad tempore obcaecati sequi omnis sapiente natus corrupti accusamus impedit
+							architecto vero atque, possimus, quis quisquam dolorem alias culpa iste maiores? Est, unde
+							ratione temporibus quod, molestiae debitis veritatis voluptates adipisci in eum, expedita
+							consectetur dolores repellendus. Beatae debitis id quam! Reprehenderit fuga ab ex atque,
+							nihil adipisci aut iure laudantium dignissimos totam ducimus dolorum officia, laborum
+							cupiditate. Repudiandae in animi facilis beatae sunt suscipit, consectetur assumenda
+							molestias, impedit, minus dolore provident. Sed, iusto aliquam maxime ad quae a! Odio
+							tempora cupiditate debitis corporis voluptate natus fuga ex sit porro. Repellat magni eum id
+							blanditiis amet. Inventore obcaecati omnis odio provident fuga! Excepturi modi in officia
+							error nesciunt similique laboriosam veniam id? Quod natus porro tempora adipisci
+							perspiciatis delectus quisquam, doloremque aut qui enim minus totam maxime fugiat ipsam
+							officiis, at ut voluptatibus quos vel magni? Esse, consectetur quisquam?</p>
+					</div>
+					<div id="parent">
+						<div class="clickzone" @click="showMap =true">Vid</div><img src='pages/7.jpg' 
+							usemap="#googlemaps">
+						<img />
+
+					</div>
+					<div><img src='pages/1.jpg' /></div>
+					<div><img src='pages/7.jpg' /></div>
+					<div><img src='pages/1.jpg' /></div>
+					<div><img src='pages/1.jpg' /></div>
+					<div><img src='pages/1.jpg' /></div>
+					<div><img src='pages/1.jpg' /></div>
+					<div><img src='pages/1.jpg' /></div>
+					<div><img src='pages/1.jpg' /></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+	<script>
+		new Vue({
+			el: '#app',
+			data() {
+				return {
+					showModal: false,
+					showMap:false
+				}
+			}
+		})
+	</script>
+
+	<script type="text/javascript">
+
+		function loadApp() {
+
+			// Create the flipbook
+
+			$('.flipbook').turn({
+				// Width 922
+
+
+				width: 1000,
+
+				// Height
+
+				height: 648,
+
+				// Elevation
+
+				elevation: 50,
+
+				// Enable gradients
+
+				gradients: true,
+
+				// Auto center this flipbook
+
+				autoCenter: true
+
+			});
+		}
+
+		// Load the HTML4 version if there's not CSS transform
+
+		yepnope({
+			test: Modernizr.csstransforms,
+			yep: ['libs/turn.js'],
+			nope: ['libs/turn.html4.min.js'],
+			both: ['css/basic.css'],
+			complete: loadApp
+		});
+
+	</script>
+
+</body>
+
+</html>
