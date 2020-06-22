@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Edit</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-112x112.png">
+    <!--
+        <meta property="og:title" content="Image Modification sector">
+        <meta property="og:description" content="Select an image, click to create your areas and generate html your output!">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://www.image-map.net/">
+        <meta property="og:image" content="http://www.image-map.net/images/apple-touch-icon-112x112.png">
+        <meta property="og:image:secure_url" content="Website Favicon">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="112">
+        <meta property="og:image:height" content="112">
+        <meta name="description" content="Easy free online html image map generator. Select an image, click to create your areas and generate html your output!">
+        <meta name="keywords" content="image map, image map generator, image map creator, image map editor, image map maker, image map online, image map tool, html image map, image map tool, image mapping, image mapper, html image map, online image map editor, image maps, image map responsive, image map html5, image map coordinates, image map maker, image map online">
+        -->
+    <link rel="stylesheet" href="app.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quantico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebApplication">
+    <link itemprop="image" href="images/apple-touch-icon-112x112.png">
+    <meta itemprop="operatingSystem" content="Browser">
+    <meta itemprop="browserRequirements" content="Browser that supports HTML5, SVG and JavaScript">
+    <meta itemprop="applicationCategory" content="Online, Tool, Image Map">
+    <header>
+        <nav class="navbar navbar-default navbar-inverse" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#im-navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <h1>
+                        <a class="navbar-brand" href="index.html" itemprop="name">Dynamin image generator zone</a>
+                    </h1>
+                </div>
+                <div class="navbar-collapse collapse" id="im-navbar">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a data-target="#f8e147" data-toggle="fcmodal" href="https://formcrafts.com/a/10442"></a>
+                        </li>
+                    </ul>
+                    <p class="navbar-text navbar-right">Image Map Creation</p>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1><a href="./flipbook/">POPUP flipbook link</a></h1>
+                <h1><a href="http://134.122.57.51:8000/steve-jobs/#page/11">Images Flipbook</a></h1>
+                <h2>Tutorial🙂</h2>
+                <p itemprop="description">With the help of our generator creating html imagemaps is free and easy.
+                    Simply start by selecting an image from your pc, or load one directly from an external website. Next
+                    up create your hot areas using either rectangle, circle or polygon shapes. Creating these shapes is
+                    as easy as pointing and clicking on your image. Don't forget to enter a link, title and target for
+                    each of them. Then once you're finished simply click Show Me The Code!</p>
+                <div class="step">
+                    <!-- Main Dialogue -->
+                    <button type="button" class="btn btn-success btn-lg" id="image-mapper-upload">Select Image from My
+                        PC</button>
+                    <input type="file" name="" id="image-mapper-file">
+                    <span class="divider">&nbsp;&nbsp;&nbsp;-- OR -- &nbsp;&nbsp;&nbsp;</span>
+                    <button type="button" class="btn btn-success btn-lg" data-toggle="modal"
+                        data-target="#image-mapper-load">Load Image from url</button>
+                    <h2>Select page</h2>
+                    <div>
+                        <!--
+                        <ul class='pagelocation'>
+                          <li ><button type="button" class="btn btn-primary" id="image-mapper-continue" disabled="false"></button><img src="https://yts.mx/assets/images/movies/funhouse_2019/small-cover.jpg" alt=""></li>
+                          <li id="image-mapper-continue"><img src="https://yts.mx/assets/images/movies/funhouse_2019/small-cover.jpg" alt=""></li>
+                        </ul>
+			-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="container toggle-content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12" id="image-map-wrapper">
+                            <div id="image-map-container">
+                                <div id="image-map" style="max-width: 100%">
+                                    <span class="glyphicon glyphicon-picture"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <table class="table" id="image-mapper-table">
+                    <thead>
+                        <tr>
+                            <th>Active</th>
+                            <th>Shape</th>
+                            <th>Link</th>
+                            <th>Title</th>
+                            <th>Target</th>
+                            <th style="width: 25px"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="width: 65px">
+                                <div class="control-label input-sm">
+                                    <input type="radio" name="im[0][active]" value="1">
+                                </div>
+                            </td>
+                            <td>
+                                <select name="im[0][shape]" class="form-control input-sm">
+                                    <option value="">---</option>
+                                    <option value="rect">Rect</option>
+                                    <option value="poly">Poly</option>
+                                    <option value="circle">Circle</option>
+                                </select>
+                            </td>
+                            <td>
+                                <input type="text" name="im[0][href]" value="" placeholder="Link"
+                                    class="form-control input-sm">
+                            </td>
+                            <td>
+                                <input type="text" name="im[0][title]" value="" placeholder="Title"
+                                    class="form-control input-sm">
+                            </td>
+                            <td>
+                                <select name="im[0][target]" class="form-control input-sm">
+                                    <option value="">---</option>
+                                    <option value="_blank">_blank</option>
+                                    <option value="_parent">_parent</option>
+                                    <option value="_self">_self</option>
+                                    <option value="_top">_top</option>
+                                </select>
+                            </td>
+                            <td>
+                                <button class="btn btn-default btn-sm remove-row" name="im[0][remove]">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="6" style="text-align: right">
+                                <button type="button" class="btn btn-danger btn-sm add-row">
+                                    <span class="glyphicon glyphicon-plus"></span>
+                                    Add New Area
+                                </button>
+                            </th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="container toggle-content segment">
+        <div class="row">
+            <div class="col-md-12" style="text-align: center">
+                <button type="button" class="btn btn-success btn-lg" data-toggle="modal"
+                    data-target="#modal-code">Modify the Code!</button>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>What is an Image Map?</h2>
+                <p>Originally introduced in HTML 3.2 as a replacement for server side imagemaps. Server side image maps
+                    were clunky requiring a round trip to the web server to determine where to go based on the
+                    coordinates clicked in the image. Thus client side image-maps were born!</p>
+                <p>An imagemap is a graphic image where a user can click on different parts of the image and be directed
+                    to different destinations. imagemaps are made by defining each of the hot areas in terms of their x
+                    and y coordinates (relative to the top left hand corner). With each set of coordinates, you specify
+                    a link that users will be directed to when they click within the area.</p>
+                <h2>As an example, say you have a map of the World that you wish to act as an image map. Each country
+                    could have their image map areas defined on the map to take you to different pages.</h2>
+            </div>
+            <div class="col-md-6">
+                <h2>About</h2>
+                <p>This makes it extremely easy to create free HTML based image maps. The tool was build from the ground
+                    up with the modern browsers in mind, and sadly in turn doesn't support older browsers (sorry IE8 and
+                    lower!). All operations are completely client side in your browser using the power of HTML5, SVG and
+                    JavaScript.</p>
+                <p>Disclaimer: No image from your PC are ever transferred out of your browser. All files loaded from
+                    your PC are read using the FileReader JavaScript API directly off your hard drive in to your
+                    browser.</p>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="image-mapper-load" tabindex="-1" role="dialog" aria-labelledby="image-mapper-load-label"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" id="image-mapper-dialog">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="image-mapper-load-label">Load Image from Website</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group input-group-sm has-error">
+                        <input type="text" value="" placeholder="http://..." id="image-mapper-url"
+                            class="form-control input-sm">
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="image-mapper-continue">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modal-code" tabindex="-1" role="dialog" aria-labelledby="modal-code-label"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" id="modal-code-dialog">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="modal-code-label">Generated Image Map Output</h4>
+                </div>
+                <div class="modal-body">
+                    <textarea class="form-control input-sm" readonly="readonly" id="modal-code-result"
+                        rows="10"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.min.js"></script>
+    <script src=modify.js></script>
+    <script>
+        (function ($) {
+            $(document).trigger('init');
+        }
+        )(jQuery);
+    </script>
+    <!-- <script> Gooogle Analytics
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function() {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }
+                ,
+                i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            }
+            )(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-50082177-1', 'image-map.net');
+            ga('send', 'pageview');
+</script> -->
+    <script type="text/javascript">
+        var _fo = _fo || [];
+        _fo.push({
+            'm': 'true',
+            'c': 'f8e147',
+            'i': 10442
+        });
+        if (typeof fce == 'undefined') {
+            var s = document.createElement('script');
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'formcrafts.com/js/fc.js';
+            var fi = document.getElementsByTagName('script')[0];
+            fi.parentNode.insertBefore(s, fi);
+            fce = 1;
+        }
+    </script>
+</body>
+
+</html>
